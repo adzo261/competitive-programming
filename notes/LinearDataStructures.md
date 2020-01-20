@@ -40,7 +40,8 @@ vector<long long> maxOfEachSubArray(vector<long long> a, int k) {
         if (i > (dq.front() + k - 1)) {
             dq.pop_front();
         }
-        //While current element is greater than smallest elements of queue, remove smallest elements from queue
+        /*While current element is greater than smallest elements of queue,
+         remove smallest elements from queue*/
         while (!dq.empty() && a[i] > a[dq.back()]) {
             dq.pop_back();
         }
