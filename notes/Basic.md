@@ -4,13 +4,13 @@
 
 ## Index
 
-1 . [Excel Column to Number and vice versa](#1.-excel-column-to-number-and-vice-versa)
+1 . [Excel Column to Number and vice versa](#excel-column-to-number-and-vice-versa)
 
 ---
 
 <br>
 
-## 1. Excel Column to Number and vice versa :
+## Excel Column to Number and vice versa
 
 Convert Excel Column Letter to Number and Vice Versa. <br>
 Eg: ZQ => 693 or 694 => ZR
