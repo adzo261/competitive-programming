@@ -4,7 +4,7 @@
 
 ## Index
 
-1 . [Excel Column to Number and vice versa](#excel-column-to-number-and-vice-versa)
+1 . [Excel Column to Number and vice versa](#1.-excel-column-to-number-and-vice-versa)
 
 ---
 

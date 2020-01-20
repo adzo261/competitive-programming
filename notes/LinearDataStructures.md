@@ -4,7 +4,7 @@
 
 ## Index
 
-1 . [Maximum element from each sub array of size k](#maximum-element-from-each-sub-array-of-size-k)
+1 . [Maximum element from each sub array of size k](#1.-maximum-element-from-each-sub-array-of-size-k)
 
 ---
 
