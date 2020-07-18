@@ -111,7 +111,7 @@ ll numberOfSubarraysWithSumK(vector<ll> a, ll k) {
 
 ```
 
-- Can be used on a function _f_ : _f_ be the cumulative function on array _a_ using operator _op_,
-  then if _f_ follows :
+- Can be used on a function _f_ : _f_ be the cumulative function on array _a_ using operator _op_,<br>
+  then if _f_ follows :<br>
   _f<sub>r</sub> op<sup>-1</sup> f<sub>l</sub>_ = _f<sub>(l+1....r)</sub>_ where _op<sup>-1</sup>_ is the inverse of _op_ operator.
-- Variation encountered in `Equal subarrays` in [January Circuits 2020(Hackerearth)](https://codeforces.com/problemset/problem/1109/A).
+- Variation encountered in [A. Sasha and a Bit of Relax(Codeforces)](https://codeforces.com/problemset/problem/1109/A).
