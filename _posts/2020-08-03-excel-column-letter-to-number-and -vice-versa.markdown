@@ -7,7 +7,7 @@ external-url:
 categories: Basic
 ---
 
-Convert Excel Column Letter to Number and Vice Versa. <br>
+Convert Excel Column Letter to Number and Vice Versa. <br><br>
 Eg: ZQ => 693 or 694 => ZR
 
 ```cpp

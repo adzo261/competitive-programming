@@ -7,7 +7,7 @@ external-url:
 categories: Linear-Data-Structures
 ---
 
-Example: <br>
+Example: <br><br>
 Input:
 { 1,2,1,2,4,2 },
 k = 4 <br>
