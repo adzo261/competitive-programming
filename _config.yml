@@ -1,1 +1,18 @@
-theme: jekyll-theme-cayman
+# Site settings
+title: "Competitive programming Notes"
+author: "Aditya Zope"
+description: "Collection of competitive programming problems that taught me new concepts and tricks."
+keywords: "Software Engineering, Mathematics, Algorithms, Programming, Competitive, Codeforces, Data Structures, Probability, Puzzles, Codechef"
+biography: "I am a software developer, interested in algorithms and data structures, mathematics and large scale software designs."
+colophon: "© 2020 — 2021 by Aditya Zope"
+
+baseurl: ""
+url: "http://adzo261.github.io"
+
+github_username: adzo261
+linkedin_username: adzo261
+
+simple_search: http://google.com/search
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="theme-color" content="hsl(35, 36%, 95%)">
+  <title>Longest Increasing Subsequence in NlgN using Segment Tree</title>
+
+  
+  <meta name="description" content="
+  
+    
+      
+        Longest Increasing Subsequence in NlgN using Segment Tree
+        3 Aug 2020
+        
+          
+        
+      
+    
+    
+..." />
+
+  
+  <meta name="keywords" content="" />
+
+  <link rel="canonical" href="http://localhost:4000/blog/2020/08/03/longest-increasing-subsequence-in-NlgN-using-segment-trees/">
+  <link rel="alternate" type="application/rss+xml" title="Competitive programming Notes" href="http://localhost:4000/feed.xml" />
+  <span itemprop='author'><meta name="author" content="Aditya Zope"><span itemprop='author'></span>
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="stylesheet" href="//brick.a.ssl.fastly.net/PT+Serif:400,400i,700,700i:f/Source+Code+Pro:400,600:f">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+
+      TeX: {
+        equationNumbers: { autoNumber: "AMS" }
+      },
+
+      CommonHTML: {
+        scale: 90
+      }
+    };
+  </script>
+  <script type="text/javascript" async
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+  <body>
+    <div class="post">
+  <div class="container main">
+    <div class="row">
+      <header>
+        <center><span itemprop="name"><h1>Longest Increasing Subsequence in NlgN using Segment Tree</h1></span></center>
+        <center><p>3 Aug 2020</p></center>
+        <center><span class="small-ornament"><svg viewBox="0 0 290 320">
+          <path d="M280.2656 245.3906 Q280.2656 263.25 261.8438 271.9688 Q247.9219 278.7188 227.8125 278.7188 Q235.2656 269.8594 235.2656 256.5 Q235.2656 231.8906 214.4531 217.125 Q196.0312 204.0469 170.2969 204.0469 Q143.5781 204.0469 108.8438 221.0625 L118.9688 231.4688 Q154.4062 267.8906 168.3281 267.8906 Q181.125 267.8906 181.125 255.9375 Q181.125 248.3438 173.5312 243.5625 Q167.0625 239.3438 159.0469 239.3438 Q154.6875 239.3438 148.6406 241.4531 Q158.625 220.0781 173.9531 220.0781 Q184.5 220.0781 191.8828 228.0938 Q199.2656 236.1094 199.2656 246.6562 Q199.2656 265.5 184.3594 277.875 Q170.2969 289.4062 151.0312 289.4062 Q118.6875 289.4062 81.4219 251.0156 L72.1406 241.4531 Q53.5781 249.4688 39.375 249.4688 Q26.4375 249.4688 17.1562 240.9609 Q7.875 232.4531 7.875 219.5156 Q7.875 203.9062 19.125 193.9219 Q29.9531 184.5 45.8438 184.5 Q70.0312 184.5 98.2969 211.6406 Q111.5156 202.2188 127.5469 185.4844 L134.5781 178.1719 Q174.5156 136.6875 204.8906 136.6875 Q231.4688 136.6875 231.4688 155.25 Q231.4688 173.5312 204.3281 177.3281 Q206.4375 172.8281 206.4375 170.1562 Q206.4375 159.3281 193.3594 159.3281 Q175.2188 159.3281 144.2812 189 L137.1094 195.8906 Q165.2344 185.7656 191.25 185.7656 Q221.7656 185.7656 248.3438 200.1094 Q280.2656 217.2656 280.2656 245.3906 ZM61.1719 230.4844 Q44.5781 215.2969 37.2656 215.2969 Q27.9844 215.2969 27.9844 223.4531 Q27.9844 234.4219 42.75 234.4219 Q51.1875 234.4219 61.1719 230.4844z"/>
+        </svg></span></center>
+      </header>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-8 offset-md-1">
+        <article lang="en">
+          
+          <p>Example: <br />
+Input:
+{ 1, 6, 4, 2, 3, 12, 15, 4 },
+<br />
+Output:
+5</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define N 100010
+</span><span class="n">ll</span> <span class="n">tree</span><span class="p">[</span><span class="mi">4</span> <span class="o">*</span> <span class="n">N</span><span class="p">];</span>
+<span class="n">ll</span> <span class="n">d</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="n">ll</span> <span class="nf">query</span><span class="p">(</span><span class="n">ll</span> <span class="n">node</span><span class="p">,</span> <span class="n">ll</span> <span class="n">start</span><span class="p">,</span> <span class="n">ll</span> <span class="n">end</span><span class="p">,</span> <span class="n">ll</span> <span class="n">l</span><span class="p">,</span> <span class="n">ll</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">&gt;</span> <span class="n">end</span> <span class="o">||</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">start</span> <span class="o">||</span> <span class="n">end</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">start</span> <span class="o">&amp;&amp;</span> <span class="n">end</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">];</span>
+
+    <span class="n">ll</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">max</span><span class="p">(</span><span class="n">query</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">),</span> <span class="n">query</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="n">ll</span> <span class="n">node</span><span class="p">,</span> <span class="n">ll</span> <span class="n">start</span><span class="p">,</span> <span class="n">ll</span> <span class="n">end</span><span class="p">,</span> <span class="n">ll</span> <span class="n">ind</span><span class="p">,</span> <span class="n">ll</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">&gt;</span> <span class="n">end</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">==</span> <span class="n">end</span> <span class="o">&amp;&amp;</span> <span class="n">start</span> <span class="o">==</span> <span class="n">ind</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">ll</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ind</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="p">)</span>
+        <span class="n">update</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">ind</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+    <span class="k">else</span>
+        <span class="n">update</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">ind</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+
+    <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="p">],</span> <span class="n">tree</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="n">ll</span> <span class="nf">lis</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ll</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">ll</span> <span class="n">mx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">x</span> <span class="o">:</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">mx</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">mx</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">x</span> <span class="o">:</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">query</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mx</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mx</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="idea">Idea:</h4>
+
+<ul>
+  <li>$d[x]$ stores the length of $lis$ ending at $x$.</li>
+  <li>We make use of recurrence, $d[x] = max({d[i] : i = 1,….x-1}) + 1$.</li>
+  <li>For this we maintain a max segment tree with range $[1, mx]$, where $mx = max({a[i] : i = 1,….,n})$ and based on array $d$.</li>
+  <li>We query for $max({d[i] : i = 1,….x-1})$ using segment tree and then update $d[x] = maxValue + 1$ and then update segment tree at index $x$ with new $d[x]$.</li>
+  <li>
+    <p>While doing this we keep updating the max value of $d[x]$ till now which is the actual answer.</p>
+
+    <p><br /></p>
+  </li>
+</ul>
+
+<p>Encountered in <a href="https://codeforces.com/problemset/problem/340/D">D. Bubble Sort Graph(Codeforces)</a>.<br />
+Also refer - <a href="/blog/2020/08/03/longest-increasing-subsequence-in-NlgN/">Longest Increasing Subsequence in Nlog<sub>2</sub>N using binary search</a></p>
+
+        </article>
+	     </div>
+     </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row biography">
+      <div class="col-sm-4">
+        <h2>who am i</h2>
+        <p>I am a software developer, interested in algorithms and data structures, mathematics and large scale software designs.</p>
+      </div>
+      <div class="col-sm-4">
+        <h2>what is this</h2>
+        <p>Collection of competitive programming problems that taught me new concepts and tricks.</p>
+      </div>
+      <div class="col-sm-4">
+        <h2>where am i</h2>
+          
+          
+          <div>
+            <a href="https://github.com/adzo261">
+              <span class="username">github//adzo261</span>
+            </a>
+          </div>
+          
+          
+          
+          <div>
+            <a href="https://id.linkedin.com/in/adzo261">
+              <span class="username">linkedin//adzo261</span>
+            </a>
+          </div>
+          
+          
+      </div>
+    </div>
+    
+    <div class="row copyright">
+      <center>© 2020 — 2021 by Aditya Zope</center>
+    </div>
+    
+  </div>
+</footer>
+
+  </body>
+</html>

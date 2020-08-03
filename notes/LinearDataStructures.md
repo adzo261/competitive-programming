@@ -8,7 +8,7 @@
 
 2 . [Number of sub arrays having sum exactly k](#number-of-subarrays-having-sum-exactly-k)
 
-3 . [Longest Increasing Subsequence in NlgN](#longest-increasing-subsequence-in-nlgN)
+3 . [Longest Increasing Subsequence in NlgN](#longest-increasing-subsequence-in-NlgN)
 
 4 . [Longest Increasing Subsequence of consecutive numbers](#longest-increasing-subsequence-of-consecutive-numbers)
 
