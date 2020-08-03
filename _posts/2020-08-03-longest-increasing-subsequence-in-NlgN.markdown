@@ -40,4 +40,4 @@ ll lis(vector<ll> a) {
 - Now, $\{a, x, c \}$ is the $lis$ of same length with each element in it smaller or equal than $\{a , b , c\}$.
 - And when we dont find such a $b$, we simply push $x$ in the vector, since $x$ will be new largest element of the $lis$ now.
 
-Also refer - [Longest Increasing Subsequence in Nlog<sub>2</sub>N using segment tree](/blog/2020/08/03/longest-increasing-subsequence-in-NlgN-using-segment-trees/)
+Also refer - [Longest Increasing Subsequence in Nlog<sub>2</sub>N using segment tree](/competitive-programming/blog/2020/08/03/longest-increasing-subsequence-in-NlgN-using-segment-trees/)

@@ -70,4 +70,4 @@ ll lis(vector<ll> a) {
   <br>
 
 Encountered in [D. Bubble Sort Graph(Codeforces)](https://codeforces.com/problemset/problem/340/D).<br>
-Also refer - [Longest Increasing Subsequence in Nlog<sub>2</sub>N using binary search](/blog/2020/08/03/longest-increasing-subsequence-in-NlgN/)
+Also refer - [Longest Increasing Subsequence in Nlog<sub>2</sub>N using binary search](/competitive-programming/blog/2020/08/03/longest-increasing-subsequence-in-NlgN/)
