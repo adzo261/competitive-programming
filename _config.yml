@@ -1,5 +1,3 @@
-url: "https://adzo261.github.io"
-baseurl: "/competitive-programming"
 # Site settings
 title: "Competitive programming Notes"
 author: "Aditya Zope"
@@ -8,8 +6,8 @@ keywords: "Software Engineering, Mathematics, Algorithms, Programming, Competiti
 biography: "I am a software developer, interested in algorithms and data structures, mathematics and large scale software designs."
 colophon: "© 2020 — 2021 by Aditya Zope"
 
-baseurl: ""
-url: "http://adzo261.github.io"
+baseurl: "/competitive-programming"
+url: "adzo261.github.io"
 
 github_username: adzo261
 linkedin_username: adzo261
