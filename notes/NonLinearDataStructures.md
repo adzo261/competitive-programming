@@ -4,13 +4,13 @@
 
 ## Index
 
-1 . [Longest Increasing Subsequence in Nlog<sub>2</sub>N](#longest-increasing-subsequence-using-nlgn)
+1 . [Longest Increasing Subsequence in NlgN](#longest-increasing-subsequence-in-nlgn)
 
 ---
 
 <br>
 
-## Longest Increasing Subsequence in Nlog<sub>2</sub>N
+## Longest Increasing Subsequence in NlgN
 
 Example: <br>
 Input:

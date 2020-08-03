@@ -11,3 +11,5 @@ My handle on all sites is : <b>adzo261</b>
 ## [Basic](/notes/Basic.md)
 
 ## [Linear Data Structures](/notes/LinearDataStructures.md)
+
+## [Non Linear Data Structures](/notes/NonLinearDataStructures.md)

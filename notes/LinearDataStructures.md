@@ -8,7 +8,7 @@
 
 2 . [Number of sub arrays having sum exactly k](#number-of-subarrays-having-sum-exactly-k)
 
-3 . [Longest Increasing Subsequence in Nlog<sub>2</sub>N](#longest-increasing-subsequence-using-nlgn)
+3 . [Longest Increasing Subsequence in NlgN](#longest-increasing-subsequence-in-nlgN)
 
 4 . [Longest Increasing Subsequence of consecutive numbers](#longest-increasing-subsequence-of-consecutive-numbers)
 
@@ -123,7 +123,7 @@ Variation encountered in [A. Sasha and a Bit of Relax(Codeforces)](https://codef
 
 <br>
 
-## Longest Increasing Subsequence in Nlog<sub>2</sub>N
+## Longest Increasing Subsequence in NlgN
 
 Example: <br>
 Input:
