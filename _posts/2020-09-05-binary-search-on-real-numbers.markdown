@@ -49,7 +49,7 @@ long double binarySearchOnRealNumbers() {
   - Do predetermined number of iterations eg. 200 or 300 iterations.
 - More iterations will give more precision.
 - If we do $200$ iterations, it will suffice for array of integers of size ${2}^{200}$.
-- But for real numbers, $200$ iterations will mean that we divide the range of binary search ($R$) into $R/{{2}^{200}} segments$.
+- But for real numbers, $200$ iterations will mean that we divide the range of binary search ($R$) into $R/{2}^{200} segments$.
 
 <br><br>
 
