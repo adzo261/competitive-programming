@@ -28,7 +28,7 @@ long double binarySearchOnRealNumbers() {
 long double binarySearchOnRealNumbers() {
      long double l = 0, r = 2000000020;
      int i = 0;
-        while (i <= 300 ) {
+        while (i++ <= 300 ) {
             long double mid = (l + r) / 2;
             if (check()) {
                 l = mid;
