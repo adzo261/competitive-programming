@@ -7,7 +7,14 @@ external-url:
 categories: Techniques
 ---
 
-#### Code:
+#### Idea:
+
+- We have two methods to decide the termination condition:
+  1. Terminate when the search space gets smaller than some predetermined bound, ${(r-l)}\lt{10}^{-12} or {10}^{-9}$
+  2. Do predetermined number of iterations eg. 200 or 300 iterations.
+- More iterations will give more precision.
+- If we do $200$ iterations, it will suffice for array of integers of size ${2}^{200}$.
+- But for real numbers, $200$ iterations will mean that we divide the range of binary search ($R$) into $R/{2}^{200} segments$.
 
 <br>
 
@@ -43,17 +50,6 @@ long double binarySearchOnRealNumbers() {
         return r;
 }
 ```
-
-#### Idea:
-
-- We have two methods to decide the termination condition:
-  1. Terminate when the search space gets smaller than some predetermined bound, ${(r-l)}\lt{10}^{-12} or {10}^{-9}$
-  2. Do predetermined number of iterations eg. 200 or 300 iterations.
-- More iterations will give more precision.
-- If we do $200$ iterations, it will suffice for array of integers of size ${2}^{200}$.
-- But for real numbers, $200$ iterations will mean that we divide the range of binary search ($R$) into $R/{2}^{200} segments$.
-
-<br>
 
 ## Problems:
 
