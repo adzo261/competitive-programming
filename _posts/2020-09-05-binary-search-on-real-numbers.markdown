@@ -7,8 +7,6 @@ external-url:
 categories: Techniques
 ---
 
-Example: <br><br>
-
 ```cpp
 bool check() {} //your checker logic
 
@@ -51,7 +49,7 @@ long double binarySearchOnRealNumbers() {
 - If we do $200$ iterations, it will suffice for array of integers of size ${2}^{200}$.
 - But for real numbers, $200$ iterations will mean that we divide the range of binary search ($R$) into $R/{2}^{200} segments$.
 
-<br><br>
+<br>
 
 ## Problems:
 
