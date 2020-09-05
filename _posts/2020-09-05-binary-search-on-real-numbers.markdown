@@ -7,7 +7,7 @@ external-url:
 categories: Techniques
 ---
 
-- We have two methods to decide the termination condition:<br>
+- We have two methods to decide the termination condition:<br><br>
   1. - Terminate when the search space gets smaller than some predetermined bound, ${(r-l)}\lt{10}^{-12} or {10}^{-9}$
   2. - Do predetermined number of iterations eg. 200 or 300 iterations.
 - More iterations will give more precision.
